@@ -33,12 +33,12 @@ Complete the move to `/Users/nateguo/Documents/projects/fitness-tracker`, commit
 ### REQ-001 — Documentation and privacy-safe repository initialisation
 
 - **Summary:** Organise documentation and initialise a privacy-safe private GitHub repository.
-- **Status:** IN_PROGRESS
+- **Status:** IMPLEMENTED
 - **Acceptance criteria:** AC-01 through AC-12 in the implementation task.
-- **Implementation summary:** Removed four verified root-level duplicate Markdown copies; added privacy-safe README, checklist, and Git ignore rules; amended Reviewer and Implementer checklist responsibilities. The complete project was moved to `/Users/nateguo/Documents/projects/fitness-tracker`, where `main` tracks the intended `origin/main`; the five public project documents still need to be committed and pushed from the new repository.
-- **Review status:** CHANGES REQUIRED — correction in progress after the project-directory move explained the apparent missing-file findings.
+- **Implementation summary:** Removed four verified root-level duplicate Markdown copies; added privacy-safe README, checklist and Git ignore rules; amended Reviewer and Implementer checklist responsibilities. The complete project was moved to `/Users/nateguo/Documents/projects/fitness-tracker`; the five public project documents were committed as `1006769` and pushed to the intended private GitHub repository through GitHub Desktop.
+- **Review status:** PENDING RE-REVIEW — the earlier CHANGES REQUIRED findings were corrected or resolved by identifying the canonical moved directory.
 - **Relevant files:** `README.md`, `checklist.md`, `reviewer.md`, `implementer.md`, `.gitignore`, four `xunji-*` Skill directories, `健身计划.md`.
-- **Next action:** Commit the five privacy-safe public documents in the new repository, verify repository privacy and ignored files, push `main`, then perform independent review.
+- **Next action:** Independently re-run AC-01 through AC-12 in the canonical Documents directory and record the final review decision.
 
 ## 6. Active Task Checklist
 
@@ -56,8 +56,8 @@ Complete the move to `/Users/nateguo/Documents/projects/fitness-tracker`, commit
 - [x] Move the complete project to `/Users/nateguo/Documents/projects/fitness-tracker`.
 - [x] Confirm the intended `fitness-tracker` remote and `origin/main` upstream in the new repository.
 - [x] Confirm the four Xunji Skills and `健身计划.md` are present and ignored in the new repository.
-- [ ] Commit the five public project documents in the new repository.
-- [ ] Verify private GitHub visibility and push `main`.
+- [x] Commit the five public project documents in the new repository.
+- [x] Verify private GitHub visibility and push `main`.
 
 ## 7. Decision Log
 
@@ -72,7 +72,7 @@ Complete the move to `/Users/nateguo/Documents/projects/fitness-tracker`, commit
 
 | ID | Status | Description | Impact / next action |
 | --- | --- | --- | --- |
-| ISS-001 | OPEN | GitHub CLI is not installed, but the new repository has the intended GitHub remote and upstream through another workflow. | Verify repository visibility through an authenticated or independently reliable method before closing. |
+| ISS-001 | RESOLVED | GitHub CLI is not installed, so GitHub Desktop was used as the authenticated workflow. | GitHub Desktop accessed and pushed the repository while the public GitHub API returned 404, confirming non-public visibility. |
 | ISS-002 | RESOLVED | The independent review temporarily observed missing private files after they were moved out of the old Downloads directory. | All four Xunji Skills and `健身计划.md` were found in the canonical Documents project directory with the previously observed sizes. |
 | ISS-003 | RESOLVED | The independent review temporarily observed deleted tracked documentation in the old Git working tree. | All five public project documents were found in the canonical Documents project directory and match the original commit blobs exactly. |
 | ISS-004 | RESOLVED | The old Downloads Git directory contained an unexpected remote. | The canonical Documents repository uses the intended `Player0124/fitness-tracker` remote; the old directory will not be used or pushed. |
@@ -93,6 +93,9 @@ Complete the move to `/Users/nateguo/Documents/projects/fitness-tracker`, commit
 | Project-directory migration | PASS | All public and private project files are present in the canonical Documents directory; public files match their original commit blobs. |
 | Canonical repository remote | PASS | New repository `main` tracks `origin/main` at the intended `fitness-tracker` remote. |
 | New repository public-file credential scan | PASS | The public documentation and Git configuration files returned no credential-pattern filenames. |
+| Public documentation commit | PASS | Commit `1006769` contains only the five intended public project documents. |
+| Private repository verification | PASS | The public GitHub API returned 404 while authenticated GitHub Desktop accessed the repository and completed the push. |
+| Canonical repository push | PASS | GitHub Desktop reported `push complete`; `main` is configured to track `origin/main`. |
 
 ## 10. Deferred / Optional Work
 
@@ -103,4 +106,4 @@ Complete the move to `/Users/nateguo/Documents/projects/fitness-tracker`, commit
 
 ## 11. Handoff / Next Action
 
-The Documents project directory is now canonical and contains all required files. Commit the five public documents, verify the repository is private, push `main`, and then have the Reviewer independently re-run AC-01 through AC-12. Do not use or push the old Downloads Git directory.
+REQ-001 implementation is complete in the canonical Documents project directory. The next action is an independent Reviewer re-check of AC-01 through AC-12. Do not use or push the old Downloads Git directory.
