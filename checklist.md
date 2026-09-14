@@ -12,7 +12,7 @@
 
 ## 2. Current Milestone
 
-Complete the move to `/Users/nateguo/Documents/projects/fitness-tracker`, commit the privacy-safe public documentation, and verify the private GitHub repository.
+REQ-002 is ready for implementation using the selected second visual concept. Confirmed: keep logging in Xunji, use the private baseline plan with initial training-day confirmation, and generate advice from explicit rules without a model service. REQ-001 independent review remains pending.
 
 ## 3. Source of Truth
 
@@ -39,6 +39,16 @@ Complete the move to `/Users/nateguo/Documents/projects/fitness-tracker`, commit
 - **Review status:** PENDING RE-REVIEW — the earlier CHANGES REQUIRED findings were corrected or resolved by identifying the canonical moved directory.
 - **Relevant files:** `README.md`, `checklist.md`, `reviewer.md`, `implementer.md`, `.gitignore`, four `xunji-*` Skill directories, `健身计划.md`.
 - **Next action:** Independently re-run AC-01 through AC-12 in the canonical Documents directory and record the final review decision.
+
+### REQ-002 — Daily training and nutrition dashboard
+
+- **Summary:** On opening, synchronise recent Xunji data and show today's confirmed training and nutrition targets with evidence-based rule suggestions.
+- **Status:** READY
+- **Confirmed decisions:** Keep logging in Xunji; use the private baseline plan with initial training-day confirmation; generate advice through explicit rules without a model service.
+- **Specification:** `daily-dashboard-spec.md`, AC-01 through AC-14 scoped to REQ-002.
+- **Progress:** User selected the second displayed concept. Its source is saved as `design/daily-dashboard-selected.png`; behaviour and responsive details are specified in `daily-dashboard-spec.md`. The standalone task is `REQ-002-implementation-prompt.md`. No live records were requested or application built.
+- **Review status:** NOT IMPLEMENTED
+- **Next action:** Implement Agent executes `REQ-002-implementation-prompt.md`, then returns evidence for independent review.
 
 ## 6. Active Task Checklist
 
@@ -68,6 +78,13 @@ Complete the move to `/Users/nateguo/Documents/projects/fitness-tracker`, commit
 | DEC-003 | The GitHub repository name is `fitness-tracker` and visibility must be private. | Explicit project requirement. | 2026-09-14 |
 | DEC-004 | `/Users/nateguo/Documents/projects/fitness-tracker` is the canonical project working directory. | The user moved the complete project there; future work must not use the old Downloads path. | 2026-09-14 |
 
+Additional confirmed decisions for REQ-002 (2026-09-14):
+
+- DEC-005: Xunji remains the recording app; dashboard reads data and advises.
+- DEC-006: The private baseline plan is the primary source, with initial training-day/date confirmation.
+- DEC-007: No language-model service in the first version; use confirmed rules.
+- DEC-008: User selected the second displayed visual concept. Use `design/daily-dashboard-selected.png` as the fixed visual reference; mock values are not personal data.
+
 ## 8. Discovered Issues
 
 | ID | Status | Description | Impact / next action |
@@ -76,6 +93,11 @@ Complete the move to `/Users/nateguo/Documents/projects/fitness-tracker`, commit
 | ISS-002 | RESOLVED | The independent review temporarily observed missing private files after they were moved out of the old Downloads directory. | All four Xunji Skills and `健身计划.md` were found in the canonical Documents project directory with the previously observed sizes. |
 | ISS-003 | RESOLVED | The independent review temporarily observed deleted tracked documentation in the old Git working tree. | All five public project documents were found in the canonical Documents project directory and match the original commit blobs exactly. |
 | ISS-004 | RESOLVED | The old Downloads Git directory contained an unexpected remote. | The canonical Documents repository uses the intended `Player0124/fitness-tracker` remote; the old directory will not be used or pushed. |
+
+REQ-002 integration issues:
+
+- ISS-005 OPEN: Template data does not establish today's schedule; require initial mapping and preserve ambiguous completion for confirmation.
+- ISS-006 OPEN: Food records do not provide confirmed nutrition targets or guarantee recording completeness; recovery/pain data is not guaranteed. Import private targets and represent missing data explicitly. Validate actual response mapping during integration.
 
 ## 9. Verification Log
 
@@ -106,4 +128,4 @@ Complete the move to `/Users/nateguo/Documents/projects/fitness-tracker`, commit
 
 ## 11. Handoff / Next Action
 
-REQ-001 implementation is complete in the canonical Documents project directory. The next action is an independent Reviewer re-check of AC-01 through AC-12. Do not use or push the old Downloads Git directory.
+REQ-002 is READY. Implement Agent should read `REQ-002-implementation-prompt.md`, `daily-dashboard-spec.md`, and the selected image before building. REQ-001 independent re-review remains pending; this design task does not change its review outcome.
