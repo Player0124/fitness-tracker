@@ -1,0 +1,22 @@
+# Xunji Skills and credentials
+xunji-*/
+
+# Private fitness data and former local copies
+训练.md
+身体.md
+饮食.md
+模板.md
+健身计划.md
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Local and generated files
+.DS_Store
+node_modules/
+.next/
+out/
+dist/
+*.local
